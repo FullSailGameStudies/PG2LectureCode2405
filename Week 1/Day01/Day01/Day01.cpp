@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include "Calculator.h"
+#include "HouseBots.h"
 
 int AddOne(int localNumber)
 {
@@ -22,6 +23,22 @@ void print(const std::vector<std::string>& names)
 
 int main()
 {
+    HouseBots steve;
+    steve.CleaningBot("Bathroom 1");
+
+    HouseBots gordon;
+    std::vector<std::string> items{ "Gouda", "PepperJack", "Bacon" };
+    items.push_back("Caramelized Onions");
+    items.push_back("Jalapeno Pickles");//index 4
+    items.push_back("Arugula");
+    items.push_back("2 All-Beef 1/4lb Wagyu Beef");
+
+    items.erase(items.begin() + 4);//erase REQUIRES an iterator.
+
+    std::string myFood = gordon.CookingBot("Cheese Burger", items);
+    std::string sideDish = gordon.CookingBot("Fries", std::vector<std::string>{"Waffle fries"});
+
+    std::cout << "Time to eat " << myFood << " and " << sideDish << "! Don't bother me.\n";
     /*
       Calling a method
         use the methods name.
