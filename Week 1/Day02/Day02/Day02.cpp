@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Menu.h"
 
 bool postFix(std::string& hero)
 {
@@ -38,6 +39,14 @@ void printInfo(const std::vector<int>& scores)
 
 int main()
 {
+
+    Menu cafePG2;
+    std::string otherName = "Eggs Benedict";
+    std::vector<std::string> items{ "2 Eggs", "Hollandaise sauce", "Biscuits", "Ham" };
+    MenuItem item1(otherName, items);
+    cafePG2.AddMenuItem(item1);
+
+
     /*
         ╔══════════════════════════════╗
         ║Parameters: Pass by Reference.║
