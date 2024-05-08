@@ -3,7 +3,8 @@
 class Menu
 {
 public:
-	void AddMenuItem(MenuItem& item);
+	void AddMenuItem(const MenuItem& item);
+	void Print() const;
 private:
 	std::vector<MenuItem> food;
 };

@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "Menu.h"
+#include <iomanip>
 
 bool postFix(std::string& hero)
 {
@@ -35,6 +36,32 @@ void print(const std::vector<int>& scores)
 void printInfo(const std::vector<int>& scores)
 {
     std::cout << "size: " << scores.size() << "\tcapacity: " << scores.capacity() << "\n";
+}
+
+void FillGrades(std::vector<float>& course)//use & to pass by reference
+{
+    //srand() - seed the generator
+    //rand() - C way to generate random #s
+    //      0 - 32767
+    //0 - 100?
+    //use % to limit the range
+    srand(time(NULL));//seed it with a time value
+    for (size_t i = 0; i < 10; i++)
+    {
+        course.push_back((rand() % 10001) / 100.F);
+    }
+}
+
+//use const to prevent the method from changing the parameter
+void PrintGrades(const std::vector<float>& course)
+{
+    std::cout << "\n\nGrades for PG2 2405\n";
+    for (auto& grade : course)
+    {
+        //setw -  sets the width of the next thing being printed
+        //right - right align the next thing being printed
+        std::cout << std::setw(8) << std::right << std::setprecision(3) << grade << "\n";
+    }
 }
 
 int main()
@@ -68,9 +95,12 @@ int main()
             Write a method to fill the vector of floats with grades.
             1) pass it in by reference
             2) add 10 grades to the vector
+            3) in main, print the grades after calling the method
 
     */
     std::vector<float> grades;
+    FillGrades(grades);
+    PrintGrades(grades);
 
 
 
