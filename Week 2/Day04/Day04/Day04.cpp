@@ -17,7 +17,13 @@ std::string toUpper(const std::string& original)
 
 void recursiveLoop(int N)
 {
-	recursiveLoop(N + 1);
+	//we need an EXIT CONDITION
+	if (N < 50)
+	{
+		std::cout << N << "\n";
+		recursiveLoop(N+1);
+		std::cout << N << "\n";
+	}
 }
 
 unsigned long factorial(unsigned int N)
