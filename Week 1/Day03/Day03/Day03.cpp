@@ -4,14 +4,24 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Superhero.h"
+#include "ThemeSong.h"
 
 std::string postFix(std::string fileName, int postFixNumber = 1) //postFixNumber is optional
 {
     return fileName + "_" + std::to_string(postFixNumber);
 }
 
+void NonOptional(std::string name, int someNumber = 5)
+{}
+
 int main()
 {
+    NonOptional("Bob", 5);
+    NonOptional("Steve");
+    NonOptional("Carl");
+    Superhero bats("Aquaman", "Arthur Curry");
+    bats.ChangeName();
 
     /*
         ╔═══════════════════════════════╗
@@ -39,14 +49,20 @@ int main()
     /*
         CHALLENGE 1:
 
-            Write a method called batTheme.
-            Add an optional parameter to determine how many "na" are printed. The default value should be 13.
+            Create a class called ThemeSong.
+            Write a method called batTheme in the ThemeSong class.
+            Add an optional parameter to determine how many "na" are printed. 
+                The default value should be 13.
             
-            If the calling code does not pass a value for the parameter, print "na na na na na na na na na na na na na Batman".
+            If the calling code does not pass a value for the parameter, 
+                print "na na na na na na na na na na na na na Batman".
             If a value is passed, print the number of "na" equal to the value.
             EX: if 6 is passed, print "na na na na na na Batman"
 
     */
+    ThemeSong songs;
+    songs.batTheme();
+    songs.batTheme(255);
 
 
 

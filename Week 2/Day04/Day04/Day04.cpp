@@ -26,8 +26,46 @@ unsigned long factorial(unsigned int N)
     return N * factorial(N - 1);
 }
 
+void bubbleSort(std::vector<int>& A)
+{
+    int n = A.size();
+    bool swapped;
+    do
+    {
+        swapped = false;
+        for (size_t i = 1; i <= n-1; i++)
+        {
+            if (A[i - 1] > A[i])
+            {
+                //TODO: figure out how to swap in C++
+                //swap(A[i - 1], A[i]);
+                //int temp = A[i - 1];
+                //A[i - 1] = A[i];
+                //A[i] = temp;
+                std::swap(A[i - 1], A[i]);
+                swapped = true;
+            }//end if
+        }//end for
+        --n;//pre
+    } while (swapped);
+}
+
+void Print(std::vector<int> nums)
+{
+    for (auto& num : nums)
+    {
+        std::cout << num << " ";
+    }
+    std::cout << "\n";
+}
+
 int main()
 {
+    std::vector<int> numbers{ 13,7,0,5,1 };
+    Print(numbers);
+    bubbleSort(numbers);
+    Print(numbers);
+
     /*
         ╔═════════╗
         ║Recursion║

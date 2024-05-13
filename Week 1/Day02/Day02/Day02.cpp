@@ -35,6 +35,11 @@ void print(const std::vector<int>& scores)
 
 void printInfo(const std::vector<int>& scores)
 {
+    //size() - # of items in a vector
+    //capacity() - length of the internal array
+    //these #'s are not always equal
+    //size will always be <= capacity.
+    //you can only access from 0->size-1 in the vector.
     std::cout << "size: " << scores.size() << "\tcapacity: " << scores.capacity() << "\n";
 }
 
@@ -61,6 +66,34 @@ void PrintGrades(const std::vector<float>& course)
         //setw -  sets the width of the next thing being printed
         //right - right align the next thing being printed
         std::cout << std::setw(8) << std::right << std::setprecision(3) << grade << "\n";
+    }
+}
+
+void RemoveFailing(std::vector<float>& course)
+{
+    for (size_t i = 0; i < course.size(); )
+    {
+        if (course.at(i) < 59.5)
+        {
+            course.erase(course.begin() + i);
+        }
+        else i++;
+    }
+    
+    for (int i = course.size() - 1; i >= 0; i--)
+    {
+        if (course.at(i) < 59.5)
+            course.erase(course.begin() + i);
+    }
+
+    auto iter = course.begin();
+    while (iter != course.end())
+    {
+        if (*iter < 59.5)
+        {
+            iter = course.erase(iter);
+        }
+        else iter++;
     }
 }
 
@@ -113,8 +146,13 @@ int main()
         This is the way you pass by reference and prevent the method from changing the variable.
     */
     std::vector<int> highScores;
+    highScores.reserve(10);
+    printInfo(highScores);
     for (int i = 0; i < 10; ++i)
+    {
         highScores.push_back(rand());
+        printInfo(highScores);
+    }
     float avg = average(highScores);
 
 
@@ -179,6 +217,9 @@ int main()
             Print the grades.
     */
 
+    PrintGrades(grades);
+    RemoveFailing(grades);
+    PrintGrades(grades);
 
 
 
