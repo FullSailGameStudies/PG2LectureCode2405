@@ -88,6 +88,17 @@ void Print(std::vector<int> nums)
 	std::cout << "\n";
 }
 
+void Bats(int i = 0)
+{
+	if (i >= 100) return;//exit condition
+
+
+	{
+		std::cout << (char)78 << (char)65 << ' ';
+		Bats(++i);
+	}
+}
+
 int main()
 {
 	std::vector<int> numbers{ 13,7,0,5,1 };
@@ -135,7 +146,7 @@ int main()
 			}
 	*/
 	//call Bats here.
-
+	Bats();
 	char c[] = { '\n', 66, 65, 84, 77, 65, 78, 33, 33 };
 	for (auto ch : c) std::cout << ch;
 
