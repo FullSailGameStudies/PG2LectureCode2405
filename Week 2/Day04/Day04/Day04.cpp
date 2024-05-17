@@ -120,6 +120,11 @@ int main()
 	for (auto& name : names)
 		std::cout << name << "\n";
 
+
+	std::vector<std::string> students{
+		"Justin","Amata","Lucian","Dakota","Aidon","Shaq","Sky","Kinkayde","Luis","J","Devon","Joshua","Angel","Breanna","Jessica","Joshua N", "Robert","Terrence"
+
+	};
 	/*
 		╔═════════╗
 		║Recursion║

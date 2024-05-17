@@ -6,6 +6,7 @@
 #include <string>
 #include "Calculator.h"
 #include "HouseBots.h"
+using namespace std;
 
 int AddOne(int localNumber)
 {
@@ -21,8 +22,33 @@ void print(const std::vector<std::string>& names)
 }
 
 
+string Add(string name, int postFix)
+{
+    return name + "_" + to_string(postFix);
+}
+
+class NameMangler
+{
+public:
+    string Add(string name, int postFix);
+};
+
+string NameMangler::Add(string name, int postFix)
+{
+    return name + "_" + to_string(postFix);
+}
+
+
 int main()
 {
+
+    string returnedString = Add("T", 1000);
+
+    string argument1 = "Earth";
+    int argument2 = 1610;
+    string miles = Add(argument1, argument2);
+
+
     HouseBots steve;
     steve.CleaningBot("Bathroom 1");
 
