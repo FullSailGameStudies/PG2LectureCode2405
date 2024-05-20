@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Player.h"
 
 
 /*              CLASSESS
@@ -44,6 +46,16 @@
 
 int main()
 {
+    //creating an instance of the Player class
+    Player steev("Hero Brine", 10,20,0);//for classes, you must call a constructor to create an instance
+    Player alex("Alex");
+
+    steev.HUD();
+    alex.HUD();
+
+    Player::Players();//call static methods on the class name
+
+
     /*
         Lecture code: add a Car class
     
