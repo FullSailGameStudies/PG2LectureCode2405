@@ -61,14 +61,6 @@ int main()
     
     */
 
-    /*
-        CHALLENGE:
-
-            Create a Person class.
-            Right-Click the project and select "Add > Class..."
-
-    */
-
 
 
 
@@ -85,10 +77,6 @@ int main()
 
     */
 
-    /*
-        CHALLENGE:
-            Add an age field and a name field to the Person class
-    */
 
 
 
@@ -109,12 +97,6 @@ int main()
         }
 
         Lecture code: add a vehicleInformation method
-    */
-
-
-    /*
-        CHALLENGE:
-            write an ItsMyBirthday method. increment age and print out a happy message.
     */
 
 
@@ -143,13 +125,6 @@ int main()
     */
 
 
-    /*
-
-        CHALLENGE:
-            Add Age getter/setter to provide access to the mAge field
-            Add a Name getter/setter for the mName field
-    */
-
 
 
 
@@ -175,8 +150,18 @@ int main()
 
 
     /*
-
         CHALLENGE:
+
+            Create a Person class.
+            Right-Click the project and select "Add > Class..."
+
+            Add an age field and a name field to the Person class
+
+            write an ItsMyBirthday method. increment age and print out a happy message.
+
+            Add Age getter/setter to provide access to the mAge field
+            Add a Name getter/setter for the mName field
+
             Add a constructor to the Person class to initialize the age and name fields
     */
 
